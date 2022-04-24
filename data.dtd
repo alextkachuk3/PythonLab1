@@ -1,0 +1,9 @@
+<!ELEMENT metro_lines (metro_line*)>
+<!ELEMENT metro_line (station*)>
+<!ATTLIST metro_line id ID>
+<!ATTLIST color CDATA>
+<!ELEMENT station EMPTY>
+<!ATTLIST station id ID>
+<!ATTLIST name CDATA>
+<!ATTLIST open CDATA>
+<!ATTLIST close CDATA>
