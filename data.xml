@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metro_lines>
-    <metro_line id="1" color = "red">
-        <station id="1" name="Akademmistechko" open="05:58:00" close="24:00:00"/>
-        <station id="2" name="Zhytomyrska" open="05:58:00" close="24:00:00"/>
-        <station id="3" name="Sviatoshyn" open="05:58:00" close="24:00:00"/>
-        <station id="4" name="Nykvy" open="05:58:00" close="24:00:00"/>
-        <station id="5" name="Beresteiska" open="05:58:00" close="24:00:00"/>
+    <metro_line id="m-1" color = "red">
+        <station id="s-11" name="Akademmistechko" open="05:58:00" close="24:00:00"/>
+        <station id="s-12" name="Zhytomyrska" open="05:58:00" close="24:00:00"/>
+        <station id="s-13" name="Sviatoshyn" open="05:58:00" close="24:00:00"/>
+        <station id="s-14" name="Nykvy" open="05:58:00" close="24:00:00"/>
+        <station id="s-15" name="Beresteiska" open="05:58:00" close="24:00:00"/>
     </metro_line>
-    <metro_line id="2" color = "blue">
-        <station id="1" name="Teremky" open="06:00:00" close="24:00:00"/>
-        <station id="2" name="Ipodrom" open="06:00:00" close="24:00:00"/>
-        <station id="3" name="Vystavkovyi Tsentr" open="06:00:00" close="24:00:00"/>
-        <station id="4" name="Vasylkivska" open="06:00:00" close="24:00:00"/>
-        <station id="5" name="Holosiivska" open="06:00:00" close="24:00:00"/>
+    <metro_line id="m-2" color = "blue">
+        <station id="s-21" name="Teremky" open="06:00:00" close="24:00:00"/>
+        <station id="s-22" name="Ipodrom" open="06:00:00" close="24:00:00"/>
+        <station id="s-23" name="Vystavkovyi Tsentr" open="06:00:00" close="24:00:00"/>
+        <station id="s-24" name="Vasylkivska" open="06:00:00" close="24:00:00"/>
+        <station id="s-25" name="Holosiivska" open="06:00:00" close="24:00:00"/>
     </metro_line>
 </metro_lines>

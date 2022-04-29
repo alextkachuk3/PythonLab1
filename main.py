@@ -1,5 +1,5 @@
 from lxml import etree
-
+import xml.etree.ElementTree as ET
 
 def validate(xml_path: str, xsd_path: str) -> bool:
     xmlschema_doc = etree.parse(xsd_path)
@@ -15,3 +15,12 @@ if validate('data.xml', 'data.xsd'):
     print('valid!')
 else:
     print('not valid')
+
+mytree = ET.parse('data.xml')
+root = mytree.getroot()
+print(root)
+for child in root:
+    print(child.tag, child.attrib)
+
+for station in root.iter('station'):
+    print(station.attrib)
