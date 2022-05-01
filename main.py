@@ -6,9 +6,9 @@ from metro_line import MetroLine
 
 test = Metro()
 
-test.add_line(MetroLine("l1", 'blue'))
-test.add_line(MetroLine("l3", 'green'))
-test.add_line(MetroLine("l2", 'red'))
+test.add_line(id="l1", color='blue')
+test.add_line(id="l3", color='green')
+test.add_line(id="l2", color='red')
 
 # test.delete_line(3)
 
