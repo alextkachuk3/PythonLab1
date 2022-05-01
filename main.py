@@ -1,26 +1,13 @@
-from lxml import etree
-import xml.etree.ElementTree as ET
+from metro import Metro
+from metro_line import MetroLine
 
-def validate(xml_path: str, xsd_path: str) -> bool:
-    xmlschema_doc = etree.parse(xsd_path)
-    xmlschema = etree.XMLSchema(xmlschema_doc)
+test = Metro()
 
-    xml_doc = etree.parse(xml_path)
-    result = xmlschema.validate(xml_doc)
+test.add_line(MetroLine("l1", 'blue'))
+test.add_line(MetroLine("l3", 'green'))
+test.add_line(MetroLine("l2", 'red'))
 
-    return result
+# test.delete_line(3)
 
-
-if validate('data.xml', 'data.xsd'):
-    print('valid!')
-else:
-    print('not valid')
-
-mytree = ET.parse('data.xml')
-root = mytree.getroot()
-print(root)
-for child in root:
-    print(child.tag, child.attrib)
-
-for station in root.iter('station'):
-    print(station.attrib)
+test.update_color("l3", 'pink')
+print('end')
