@@ -3,13 +3,12 @@ from station import Station
 
 class MetroLine:
 
-    stations = []
-
     def __init__(self, id: str, color: str):
         if type(id) != str:
             raise ValueError("id value should be string")
         if type(color) != str:
             raise ValueError("color value should be string")
+        self.stations = []
         self.id = id
         self.color = color
 

@@ -1,5 +1,6 @@
 import time
 
+import metro_parser
 import xml_util
 from metro import Metro
 from metro_line import MetroLine
@@ -18,4 +19,7 @@ print(xml_util.validate('data.xml', 'data.xsd'))
 test.update_color("l3", 'pink')
 
 test.add_station_to_line('l2', name='Zoloti Vorota', open='12:00:00', close='23:00:11')
+
+meow = metro_parser.parse_metro('data.xml')
+
 print('end')

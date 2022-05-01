@@ -2,7 +2,8 @@ from metro_line import MetroLine
 
 
 class Metro:
-    lines = []
+    def __init__(self):
+        self.lines = []
 
     def add_line(self, color: str, id=None):
         if id is None:
@@ -20,3 +21,17 @@ class Metro:
 
     def add_station_to_line(self, line_id: str, name: str, open: str, close: str, id=None):
         list(filter(lambda x: x.id == line_id, self.lines))[0].add_station(name, open, close, id)
+
+    def delete_station(self, station_id):
+        ind = self.index_of_line_by_station_id(station_id)
+        if ind is None:
+            raise ValueError("Station with id " + station_id + " not exist")
+        self.lines[ind[0]].stations.pop(ind[1])
+
+    def index_of_line_by_station_id(self, station_id):
+        result = None
+        for line, i in self.lines:
+            for station, j in line.stations:
+                if station.id == station_id:
+                    result = [i, j]
+        return result
