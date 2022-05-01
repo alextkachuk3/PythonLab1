@@ -11,12 +11,7 @@ def validate(xml_path: str, xsd_path: str) -> bool:
 
 
 def xml_str_to_time(time_string: str) -> time.struct_time:
-    try:
-        result = time.strptime(time_string, '%H:%M:%S')
-    except ValueError:
-        print('Time should be in format HH:MM:SS')
-        quit()
-    return result
+    return time.strptime(time_string, '%H:%M:%S')
 
 
 def time_to_xml_str(_time: time.struct_time):

@@ -3,6 +3,8 @@ from station import Station
 
 class MetroLine:
 
+    stations = []
+
     def __init__(self, id: str, color: str):
         if type(id) != str:
             raise ValueError("id value should be string")
@@ -11,13 +13,18 @@ class MetroLine:
         self.id = id
         self.color = color
 
-    stations = []
+    def add_station(self, name: str, open: str, close: str, id=None, index=None):
 
-    def add_station(self, station: Station, index=None):
+        if id is None:
+            if len(self.stations) == 0:
+                id = 's-' + self.id[1:] + '-1'
+            else:
+                id = 's-' + self.id[1:] + '-' + (self.stations[len(self.stations) - 1].id + 1)
+
         if index is None:
-            return self.stations.append(station)
+            self.stations.append(Station(id, name, open, close))
         else:
-            return self.stations.insert(station, index)
+            self.stations.insert(index, Station(id, name, open, close))
 
     def remove_station(self, id: str):
         self.stations = list(filter(lambda x: x.id != id, self.stations))

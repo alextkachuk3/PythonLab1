@@ -15,3 +15,5 @@ class Metro:
     def update_color(self, id: str, color: str):
         list(filter(lambda x: x.id == id, self.lines))[0].update_color(color)
 
+    def add_station_to_line(self, line_id: str, name: str, open: str, close: str, id=None):
+        list(filter(lambda x: x.id == line_id, self.lines))[0].add_station(name, open, close, id)
