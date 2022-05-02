@@ -1,0 +1,13 @@
+<metro_lines>
+  <metro_line id="l-1" color="red">
+    <station id="s-1-2" name="Zhytomyrska" open="05:58:00" close="23:45:00" />
+    <station id="s-1-3" name="Sviatoshyn" open="05:58:00" close="23:45:00" />
+    <station id="s-1-4" name="Nykvy" open="05:58:00" close="23:45:00" />
+    <station id="s-1-5" name="Beresteiska" open="05:58:00" close="23:45:00" />
+  </metro_line>
+  <metro_line id="l-2" color="blue">
+    <station id="s-2-1" name="Teremky" open="06:00:00" close="01:00:00" />
+    <station id="s-2-2" name="Ipodrom" open="06:00:00" close="01:00:00" />
+    <station id="s-2-4" name="Vasylkivska" open="06:00:00" close="23:45:00" />
+  </metro_line>
+</metro_lines>

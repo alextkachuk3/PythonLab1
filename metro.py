@@ -30,8 +30,8 @@ class Metro:
 
     def index_of_line_by_station_id(self, station_id):
         result = None
-        for line, i in self.lines:
-            for station, j in line.stations:
+        for i, line in enumerate(self.lines):
+            for j, station in enumerate(line.stations):
                 if station.id == station_id:
                     result = [i, j]
         return result
