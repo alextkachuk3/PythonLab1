@@ -1,0 +1,10 @@
+<metro_lines>
+    <metro_line id="m-1" color = "red">
+        <station id="s-1-1" name="Akademmistechko" open="05:58:00" close="23:45:00"/>
+        <station id="s-1-2" name="Zhytomyrska" open="05:58:00" close="23:47:00"/>
+    </metro_line>
+    <metro_line id="m-2" color = "blue">
+        <station id="s-2-1" name="Teremky" open="06:00:00" close="1:00:00"/>
+        <station id="s-2-2" name="Ipodrom" open="06:00:00" close="0:55:00"/>
+    </metro_line>
+</metro_lines>
