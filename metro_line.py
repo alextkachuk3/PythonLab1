@@ -18,7 +18,7 @@ class MetroLine:
             if len(self.stations) == 0:
                 id = 's-' + self.id[1:] + '-1'
             else:
-                id = 's-' + self.id[1:] + '-' + (self.stations[len(self.stations) - 1].id + 1)
+                id = 's' + self.id[1:] + '-' + str(get_last_number(self.stations[len(self.stations) - 1].id) + 1)
 
         if index is None:
             self.stations.append(Station(id, name, open, close))
@@ -32,3 +32,16 @@ class MetroLine:
         if type(color) != str:
             raise ValueError("color value should be string")
         self.color = color
+
+
+def get_last_number(text: str) -> int:
+    prev_is_not_digit = False
+    last_num_pos = 0
+    for i in range(0, len(text)):
+        if not text[i].isnumeric():
+            prev_is_not_digit = True
+        else:
+            if prev_is_not_digit:
+                prev_is_not_digit = False
+                last_num_pos = i
+    return int(text[last_num_pos:])

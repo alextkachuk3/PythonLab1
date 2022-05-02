@@ -10,7 +10,7 @@ class Metro:
             if len(self.lines) == 0:
                 id = 'l-0'
             else:
-                id = 'l-' + (self.lines[len(self.lines) - 1].id + 1)
+                id = 'l-' + str(int(self.lines[len(self.lines) - 1].id[2:]) + 1)
         self.lines.append(MetroLine(id, color))
 
     def delete_line(self, id: str):

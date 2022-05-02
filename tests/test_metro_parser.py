@@ -7,8 +7,8 @@ from xml_util import xml_str_to_time
 class TestParsing(unittest.TestCase):
     def test_parsing(self):
         metro = metro_xml.parse_metro('parsing_test_data.xml')
-        self.assertEqual(metro.lines[0].id, 'm-1')
-        self.assertEqual(metro.lines[1].id, 'm-2')
+        self.assertEqual(metro.lines[0].id, 'l-1')
+        self.assertEqual(metro.lines[1].id, 'l-2')
 
         self.assertEqual(metro.lines[0].color, 'red')
         self.assertEqual(metro.lines[1].color, 'blue')
