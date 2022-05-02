@@ -23,12 +23,16 @@ class Metro:
         list(filter(lambda x: x.id == line_id, self.lines))[0].add_station(name, open, close, id)
 
     def delete_station(self, station_id):
-        ind = self.index_of_line_by_station_id(station_id)
+        ind = self.find_index_of_station(station_id)
         if ind is None:
             raise ValueError("Station with id " + station_id + " not exist")
         self.lines[ind[0]].stations.pop(ind[1])
 
-    def index_of_line_by_station_id(self, station_id):
+    def find_station(self, station_id):
+        ind = self.find_index_of_station(station_id)
+        return self.lines[ind[0]].stations[ind[1]]
+
+    def find_index_of_station(self, station_id):
         result = None
         for i, line in enumerate(self.lines):
             for j, station in enumerate(line.stations):

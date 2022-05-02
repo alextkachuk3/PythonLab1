@@ -1,6 +1,7 @@
 import unittest
 
 import metro_xml
+import xml_util
 from xml_util import is_two_xml_equal
 
 
@@ -31,6 +32,14 @@ class TestMetro(unittest.TestCase):
         metro.delete_station('s-2-5')
         metro_xml.write_metro('output_delete_station.xml', metro)
         self.assertEqual(is_two_xml_equal('output_delete_station.xml', 'correct_data_after_deleting_station.xml'), True)
+
+    def test_search_station(self):
+        metro = metro_xml.parse_metro('test_data_for_add_del.xml')
+        station = metro.find_station('s-2-4')
+        self.assertEqual(station.id, 's-2-4')
+        self.assertEqual(station.name, 'Vasylkivska')
+        self.assertEqual(station.open, xml_util.xml_str_to_time('06:00:00'))
+        self.assertEqual(station.close, xml_util.xml_str_to_time('23:45:00'))
 
 
 if __name__ == '__main__':
