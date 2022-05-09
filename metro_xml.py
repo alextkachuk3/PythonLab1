@@ -1,9 +1,12 @@
 from xml.etree.ElementTree import parse, Element, ElementTree, SubElement
+
+import xml_util
 from metro import Metro
 from xml_util import time_to_xml_str
 
 
-def parse_metro(xml_path: str) -> Metro:
+def parse_metro(xml_path: str, xml_schema_path: str) -> Metro:
+    xml_util.validate(xml_path, xml_schema_path)
     result = Metro()
     my_tree = parse(xml_path)
     root = my_tree.getroot()
