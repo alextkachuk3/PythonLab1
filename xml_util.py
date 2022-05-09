@@ -1,5 +1,5 @@
 from lxml import etree
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as ElementTree
 import time
 
 
@@ -18,14 +18,15 @@ def xml_str_to_time(time_string: str) -> time.struct_time:
 def time_to_xml_str(_time: time.struct_time):
     return time.strftime('%H:%M:%S', _time)
 
+
 def elements_equal(e1, e2):
     if e1.tag != e2.tag:
         return False
     if e1.text != e2.text:
-        if  e1.text!=None and e2.text!=None :
+        if e1.text is not None and e2.text is not None:
             return False
     if e1.tail != e2.tail:
-        if e1.tail!=None and e2.tail!=None:
+        if e1.tail is not None and e2.tail is not None:
             return False
     if e1.attrib != e2.attrib:
         return False
@@ -34,11 +35,9 @@ def elements_equal(e1, e2):
     return all(elements_equal(c1, c2) for c1, c2 in zip(e1, e2))
 
 
-
 def is_two_xml_equal(f1, f2):
-    tree1 = ET.parse(f1)
+    tree1 = ElementTree.parse(f1)
     root1 = tree1.getroot()
-    tree2 = ET.parse(f2)
+    tree2 = ElementTree.parse(f2)
     root2 = tree2.getroot()
-    return elements_equal(root1,root2)
-
+    return elements_equal(root1, root2)
